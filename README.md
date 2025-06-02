@@ -39,6 +39,6 @@ kodunu çalıştırmanız yeterlidir.
 Performans testi yapmak için terminal ekranına
 ```powershell
 set PYTHONPATH=.
-locust -f tests/performance_tests/locust_test.py --host http://localhost:7001
+locust -f tests/performance-tests/locustfile.py --host http://localhost:7001
 ```
 bu kodları çalıştırmanız yeterlidir
