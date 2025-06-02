@@ -28,3 +28,17 @@ http://localhost:7001/docs
 ```
 src/utils/test_images.py dosyasında yer alan diğer örnek img_url değerlerini de deneyebilirsiniz. Oradaki dizinler ve örnek dosya isimleri, API’nin nasıl çalıştığını test etmek için referans olacaktır.
 Bu adımları takip ederek Docker ortamında projenizi doğru şekilde derleyip çalıştırabilir, ardından http://localhost:7001/docs üzerinden “Try it out” seçeneğini kullanarak örnek görsellerle API’nizi test edebilirsiniz.
+# Unit / Performans Testi
+## 1.Unit Test
+Unit testi yapmak için terminal ekranına
+```powershell
+pytest tests/unit_tests
+```
+kodunu çalıştırmanız yeterlidir.
+## 2.Performans/Locust Testi
+Performans testi yapmak için terminal ekranına
+```powershell
+set PYTHONPATH=.
+locust -f tests/performance_tests/locust_test.py --host http://localhost:7001
+```
+bu kodları çalıştırmanız yeterlidir
