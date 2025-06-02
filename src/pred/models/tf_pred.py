@@ -7,10 +7,7 @@ from src.pred.models.class_labels import *
 
 MODEL_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "Trafic_signs_model.keras"))
 IMAGE_SHAPE = (30, 30)  # Kendi modelinizin giriş boyutu
-
-def load_model():
-    model = tf.keras.models.load_model(MODEL_PATH)
-    return model
+model = tf.keras.models.load_model(MODEL_PATH)
 
 def preprocess_img(img):
     img = img.resize(IMAGE_SHAPE)
@@ -19,8 +16,8 @@ def preprocess_img(img):
     return img
 
 def tf_predict(img_original, class_labels):
+
     img = preprocess_img(img_original)
-    model = load_model()
     predictions = model.predict(img)
     predicted_class_index = np.argmax(predictions, axis=1)[0]
     probability = np.max(predictions, axis=1)[0]

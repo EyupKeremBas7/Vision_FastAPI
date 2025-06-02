@@ -14,13 +14,7 @@ def dir_check(dir_location):
 def load_image(img_url):
     try:
         if img_url.startswith("http"):
-            import requests
-            from io import BytesIO
-            response = requests.get(img_url)
-            if response.status_code != 200:
-                print("HTTP error:", response.status_code)
-                return None
-            img = Image.open(BytesIO(response.content))
+            ...
         else:
             print("Trying to open:", img_url)
             if not os.path.exists(img_url):

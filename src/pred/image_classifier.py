@@ -6,6 +6,7 @@ from typing import Any
 def tf_run_classifier(image: str) -> Any:
     img = load_image(image)
     if img is None:
+        print("tf_run_classifier: img None")
         return None
     pred_results = tf_predict(img, class_labels)
     pred_results["status_code"] = 200
